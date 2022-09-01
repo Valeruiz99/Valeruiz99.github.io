@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, developer, ADSI">
+    <meta name="description" content="Web site in HTML and CSS">
+    <meta name="author" content="Valeria B.R">
+    <title>WebSite</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        :root{
+            --fondoPagina: #fff;
+            --fondoLetra: black;
+            --fondoFooter: black;
+            --fondoFieldset: black solid 1px;
+        }
+        body{
+            background-color: var(--fondoPagina);
+            color: var(--fondoLetra);
+        }
+        footer{
+            background-color: var(--fondoFooter);
+        }
+        fieldset{
+            border: var(--fondoFieldset);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="borderBox">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+            <a class="navbar-brand" href="#">WebSite</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="formulario.html">Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="horario.html">Horario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfilPersonal.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <button onclick="DarkMode()">Modo Oscuro</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="form">
+        <fieldset>
+            <form action="" method="">
+                <div class="form">
+                    <label for="nombre">Nombre: </label>
+                    <input id="nombre" type="text" placeholder="Nombre">
+
+                    <label for="apellido">Apellido: </label>
+                    <input type="text" placeholder="Apellido">
+
+                    <label for="fechaNac">Fecha nacimiento: </label>
+                    <input type="date" placeholder="Fecha de nacimiento">
+
+                    <label for="celular">Celular: </label>
+                    <input type="number" placeholder="Celular">
+                </div>
+                <div>
+                    <select name="" id="genero">
+                        <option value="">Seleccione su género</option>
+                        <option value="">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                    </select>
+                </div>
+                <div id="btn">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </fieldset>
+    </main>
+    <footer>
+
+    </footer>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+<script>
+    function DarkMode() {
+        var cuerpo = document.getElementsByTagName('body')[0];
+        var footer = document.getElementsByTagName('footer')[0];
+        var fieldset = document.getElementsByTagName('fieldset')[0];
+        console.log(cuerpo.style.getPropertyValue("--fondoPagina"));
+        if (cuerpo.style.getPropertyValue("--fondoPagina") !== "black") {
+            cuerpo.style.setProperty("--fondoPagina", "black");
+            cuerpo.style.setProperty("--fondoLetra", "white");
+            footer.style.setProperty("--fondoFooter", "white");
+            fieldset.style.setProperty("--fondoFieldset", "white solid 1px");
+        } else {
+            cuerpo.style.setProperty("--fondoPagina", "#fff");
+            cuerpo.style.setProperty("--fondoLetra", "black");
+            footer.style.setProperty("--fondoFooter", "black");
+            fieldset.style.setProperty("--fondoFieldset", "black solid 1px");
+        }
+    }
+</script>
+
+</html>

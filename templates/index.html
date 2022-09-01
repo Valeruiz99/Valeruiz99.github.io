@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, developer, ADSI">
+    <meta name="description" content="Web site in HTML and CSS">
+    <meta name="author" content="Valeria B.R">
+    <title>WebSite</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        :root{
+            --fondoPagina: #fff;
+            --fondoLetra: black;
+            --fondoFooter: black;
+            --fondoCode: black;
+            --fondoPre: black;
+        }
+        body{
+            background-color: var(--fondoPagina);
+            color: var(--fondoLetra);
+        }
+        footer{
+            background-color: var(--fondoFooter);
+        }
+        code{
+            color: var(--colorCode);
+        }
+        pre{
+            color: var(--colorPre);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="borderBox">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+            <a class="navbar-brand" href="#">WebSite</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="formulario.html">Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="horario.html">Horario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfilPersonal.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <button onclick="DarkMode()">Modo Oscuro</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="presentacion">
+            <header>
+                <h1> ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN</h1>
+            </header>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, accusamus repudiandae expedita eum
+                asperiores error commodi id neque odio nam? Eaque voluptate dignissimos, tenetur ipsum laudantium
+                corporis fugit ab facilis!</P>
+        </section>
+        <div id="contenido">
+            <div id="tematicas">
+                <header>
+                    <h3>TEMÁTICAS DE LA TECNOLOGÍA</h3>
+                </header>
+                <ul>
+                    <li>Bases de datos</li>
+                    <li>Desarrollo Front-End</li>
+                    <li>Desarrollo Back-End</li>
+                    <li>Documentación</li>
+                    <li>Licencia</li>
+                </ul>
+                <pre>
+                    <h3>Mi primer código en html</h3>
+                    <code>
+                        def factorial(n):
+                            f = 1
+                            for i in range(1, n + 1):
+                                f *= i
+                            return f
+                    </code>
+                </pre>
+            </div>
+            <div id="programacion">
+                <header>
+                    <h3>PROGRAMACIÓN</h3>
+                </header>
+                <div>
+                    <img src="../static/img/programacion.jpg" alt="">
+                </div>
+                <figcaption>
+                    <h3>Descripción de la imágen</h3>
+                </figcaption>
+                <pre>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Error quisquam hic alias accusamus enim perspiciatis velit odio laboriosam,
+fuga at soluta officiis excepturi impedit, sunt consectetur facilis adipisci pariatur nesciunt?
+                </pre>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+<script>
+    function DarkMode() {
+        var cuerpo = document.getElementsByTagName('body')[0];
+        var footer = document.getElementsByTagName('footer')[0];
+        var code = document.getElementsByTagName('code')[0];
+        var pre = document.getElementsByTagName('pre')[0];
+        console.log(cuerpo.style.getPropertyValue("--fondoPagina"));
+        if (cuerpo.style.getPropertyValue("--fondoPagina") !== "black") {
+            cuerpo.style.setProperty("--fondoPagina", "black");
+            cuerpo.style.setProperty("--fondoLetra", "white");
+            footer.style.setProperty("--fondoFooter", "white");
+            code.style.setProperty("--colorCode", "white");
+            pre.style.setProperty("--colorPre", "white");
+        } else {
+            cuerpo.style.setProperty("--fondoPagina", "#fff");
+            cuerpo.style.setProperty("--fondoLetra", "black");
+            footer.style.setProperty("--fondoFooter", "black");
+            code.style.setProperty("--colorCode", "black");
+            pre.style.setProperty("--colorPre", "black");
+        }
+    }
+</script>
+
+</html>
